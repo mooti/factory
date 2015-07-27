@@ -1,0 +1,13 @@
+{
+	"name":"mooti/xizlr-testable",
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Mooti\\Xizlr\\Testable\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
