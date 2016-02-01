@@ -19,7 +19,7 @@ $ composer require mooti/testable
 
 ### Usage
 
-You have a class Foo that will be used within another class bar. Given you hav the following Foo.php
+Say you have a class Foo that will be used within another class Bar. Given you have the following Foo.php.
 
 ```php
 <?php
@@ -44,7 +44,7 @@ class Foo
 
 ```
 
-you will create the following Bar.php. You add the Testable trait and use the ```createNew``` method to instantiate a new object. The first argument is the name of the class and subsequent arguments are the constructor arguments. 
+You will create Bar.php. You can then add the Testable trait and use the ```createNew``` method to instantiate a new object. The first argument is the name of the class and subsequent arguments are the classes constructor arguments. 
 
 ```php
 <?php
@@ -73,7 +73,7 @@ So if you have the following script called run.php in you bin directory (assumin
 require_once('../vendor/autoload.php');
 
 $bar = new \Your\Bar();
-$bar->speak('Ken', 'Lalobo');
+echo $bar->speak('Ken', 'Lalobo');
 
 ```
 
@@ -107,6 +107,10 @@ class BarTest extends \PHPUnit_Framework_TestCase
         $foo = $this->getMockBuilder(Foo::class)
             ->disableOriginalConstructor()
             ->getMock();
+
+        $foo->expects(self::once())
+            ->method('hello')
+            ->will(self::returnValue($greeting));
 
         $bar = $this->getMockBuilder(Bar::class)
             ->disableOriginalConstructor()
