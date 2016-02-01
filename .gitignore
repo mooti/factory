@@ -1,4 +1,4 @@
 /vendor/
 /bin/vendor/
 /cache/
-/test/build/
+/build/
