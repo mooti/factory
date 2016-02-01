@@ -6,4 +6,4 @@ php:
 
 script:
   - composer install
-  - phpunit -c test/phpunit.xml --coverage-text
+  - ./bin/vendor/phpunit -c test/phpunit.xml --coverage-text
