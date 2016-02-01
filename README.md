@@ -5,7 +5,7 @@
 [![Latest Stable Version](https://poser.pugx.org/mooti/xizlr-testable/v/stable)](https://packagist.org/packages/mooti/xizlr-testable)
 [![Total Downloads](https://poser.pugx.org/mooti/xizlr-testable/downloads)](https://packagist.org/packages/mooti/xizlr-testable)
 [![Latest Unstable Version](https://poser.pugx.org/mooti/xizlr-testable/v/unstable)](https://packagist.org/packages/mooti/xizlr-testable)
-[![License](https://poser.pugx.org/mooti/xizlr-testable/license)](https://packagist.org/packages/mooti/xizlr-testable)
+[![License](https://poser.pugx.org/mooti/xizlr-testable/license?1)](https://packagist.org/packages/mooti/xizlr-testable)
 
 A small repo to aid in creating simple clean testable code without the need to use dependancy injection container. It replaces the ```new``` keyword with a method call enabling you to easily mock objects.
 
