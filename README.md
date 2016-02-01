@@ -66,12 +66,11 @@ class Bar
 }
 ```
 
-So if we have the following script called Run.php
+So if you have the following script called run.php in you bin directory (assuming you are using composer's autoload)
 
 ```php
 <?php
-require_once('Foo.php');
-require_once('Bar.php');
+require_once('../vendor/autoload.php');
 
 $bar = new \Your\Bar();
 $bar->speak('Ken', 'Lalobo');
@@ -81,7 +80,7 @@ $bar->speak('Ken', 'Lalobo');
 and we run it, we should see:
 
 ```
-$ php Run.php
+$ php bin/run.php
 $ Hello Ken Lalobo
 ```
 
@@ -89,8 +88,7 @@ Now for tests. We can now create a partial mock of Bar and override the ```creat
 
 ```php
 <?php
-require_once('Foo.php');
-require_once('Bar.php');
+require_once('../vendor/autoload.php');
 
 use My\Foo;
 use Your\Bar;
