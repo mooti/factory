@@ -1,6 +1,7 @@
 # Mooti Testable
 
 [![Build Status](https://travis-ci.org/mooti/xizlr-testable.svg?branch=master)](https://travis-ci.org/mooti/xizlr-testable)
+[![Coverage Status](https://coveralls.io/repos/github/mooti/xizlr-testable/badge.svg?branch=master)](https://coveralls.io/github/mooti/xizlr-testable?branch=master)
 
 A small repo to aid in creating simple clean testable code without the need to use dependancy injection container. It replaces the ```new``` keyword with a method call enabling you to easily mock objects.
 

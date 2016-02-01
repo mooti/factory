@@ -32,4 +32,9 @@
         </whitelist>
     </filter>
 
+    <logging>
+        <log type="coverage-html" target="build/coverage/html" charset="UTF-8" />
+        <log type="coverage-clover" target="build/coverage/clover.xml" />
+    </logging>
+
 </phpunit>
