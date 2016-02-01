@@ -2,12 +2,24 @@
 
 [![Build Status](https://travis-ci.org/mooti/xizlr-testable.svg?branch=master)](https://travis-ci.org/mooti/xizlr-testable)
 [![Coverage Status](https://coveralls.io/repos/github/mooti/xizlr-testable/badge.svg?branch=master)](https://coveralls.io/github/mooti/xizlr-testable?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/mooti/xizlr-testable/v/stable)](https://packagist.org/packages/mooti/xizlr-testable)
+[![Total Downloads](https://poser.pugx.org/mooti/xizlr-testable/downloads)](https://packagist.org/packages/mooti/xizlr-testable)
+[![Latest Unstable Version](https://poser.pugx.org/mooti/xizlr-testable/v/unstable)](https://packagist.org/packages/mooti/xizlr-testable)
+[![License](https://poser.pugx.org/mooti/xizlr-testable/license)](https://packagist.org/packages/mooti/xizlr-testable)
 
 A small repo to aid in creating simple clean testable code without the need to use dependancy injection container. It replaces the ```new``` keyword with a method call enabling you to easily mock objects.
 
+### Installation
+
+You can install this through packagist
+
+```
+$ composer require mooti/testable
+```
+
 ### Usage
 
-Foo.php
+You have a class Foo that will be used within another class bar. Given you hav the following Foo.php
 
 ```php
 <?php
@@ -32,14 +44,15 @@ class Foo
 
 ```
 
-Bar.php
+you will create the following Bar.php. You add the Testable trait and use the ```createNew``` method to instantiate a new object. The first argument is the name of the class and subsequent arguments are the constructor arguments. 
 
 ```php
 <?php
 
 namespace Your;
 
-use \Mooti\Xizlr\Testable\Testable;
+use Mooti\Xizlr\Testable\Testable;
+use My\Foo;
 
 class Bar
 {
@@ -53,7 +66,7 @@ class Bar
 }
 ```
 
-Run.php
+So if we have the following script called Run.php
 
 ```php
 <?php
@@ -65,14 +78,14 @@ $bar->speak('Ken', 'Lalobo');
 
 ```
 
-If we run it then we should see:
+and we run it, we should see:
 
 ```
 > php Run.php
 > Hello Ken Lalobo
 ```
 
-Test.php
+Now for tests. We can now create a partial mock of Bar and override the ```createNew``` method to return a mocked version of the Foo class. We can then set our expectations as normal.
 
 ```php
 <?php
