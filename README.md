@@ -81,8 +81,8 @@ $bar->speak('Ken', 'Lalobo');
 and we run it, we should see:
 
 ```
-> php Run.php
-> Hello Ken Lalobo
+$ php Run.php
+$ Hello Ken Lalobo
 ```
 
 Now for tests. We can now create a partial mock of Bar and override the ```createNew``` method to return a mocked version of the Foo class. We can then set our expectations as normal.
