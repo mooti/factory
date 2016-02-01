@@ -1,13 +1,22 @@
 {
 	"name":"mooti/xizlr-testable",
-    "require": {},
-    "require-dev": {},
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.1.*"
+    },
     "autoload": {
         "psr-4": {
             "Mooti\\Xizlr\\Testable\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Mooti\\Test\\Xizlr\\Testable\\": "test/"
+        }
+    },
     "config": {
-        "bin-dir": "bin/"
+        "bin-dir": "bin/vendor/"
     }
 }
