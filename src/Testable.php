@@ -4,6 +4,23 @@ namespace Mooti\Xizlr\Testable;
 
 trait Testable
 {
+    private $mocks = [];
+
+    /**
+     * Add a mock object. This will be returned when the user tries to create a new object
+     *
+     * @param string $className  The class to create
+     * @param string $mockObject The class to create
+     *
+     */
+    public function addMock($className, $mockObject)
+    {
+        if(!isset($this->mocks[$className])) {
+            $this->mocks[$className] = [];
+        }
+        $this->mocks[$className][] = $mockObject;
+    }
+
     /**
      * Create a new instance of a given class
      *
@@ -25,6 +42,10 @@ trait Testable
      */
     protected function _createNew($className)
     {
+        if (!empty($this->mocks[$className])) {
+            return array_shift($this->mocks[$className]);
+        }
+
         $constructArguments = func_get_args();
         array_shift($constructArguments);
         return new $className( ...$constructArguments);
