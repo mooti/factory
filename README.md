@@ -7,7 +7,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/mooti/xizlr-testable/v/unstable)](https://packagist.org/packages/mooti/xizlr-testable)
 [![License](https://poser.pugx.org/mooti/xizlr-testable/license)](https://packagist.org/packages/mooti/xizlr-testable)
 
-A small repo to aid in creating simple clean testable code without the need to use dependancy injection container. It replaces the ```new``` keyword with a method call enabling you to easily mock objects.
+A small repo to aid in creating simple clean testable code without the need to use a dependancy injection container. It replaces the ```new``` keyword with a method call enabling you to easily mock objects.
 
 ### Installation
 
@@ -84,7 +84,11 @@ $ php bin/run.php
 $ Hello Ken Lalobo
 ```
 
-Now for tests. We can now create a partial mock of Bar and override the ```createNew``` method to return a mocked version of the Foo class. We can then set our expectations as normal.
+Now for tests. There are two ways in which we can write our tests:
+
+#### Partial Mock
+
+We can now create a partial mock of Bar and override the ```createNew``` method to return a mocked version of the Foo class. We can then set our expectations as normal.
 
 ```php
 <?php
@@ -130,3 +134,44 @@ class BarTest extends \PHPUnit_Framework_TestCase
     }
 }
 ```
+
+#### Injection
+
+Alternativley we can inject the mock of Foo into Bar using the ```addMock``` method. When you call ```createNew``` it will return the mocked version of the Foo class. We can then set our expectations as normal.
+
+```php
+<?php
+require_once('../vendor/autoload.php');
+
+use My\Foo;
+use Your\Bar;
+
+class BarTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @test
+     */
+    public function speakSucceeds()
+    {
+        $firstName = 'Ken';
+        $lastName  = 'Lalobo';
+        $greeting  = 'Hello Ken Lalobo';
+
+        $foo = $this->getMockBuilder(Foo::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $foo->expects(self::once())
+            ->method('hello')
+            ->will(self::returnValue($greeting));
+
+        $bar = new Bar;
+
+        $bar->addMock(Foo::class, $foo);
+
+        self::assertSame($greeting, $bar->speak($firstName, $lastName));
+    }
+}
+```
+
+If you need multiple objects of the same class you can still add them and set their individual expectations. They will be returned back in the order they weere added
