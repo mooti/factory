@@ -1,8 +1,8 @@
 <?php
 
-namespace Mooti\Test\Xizlr\Testable;
+namespace Mooti\Test\Unit\Xizlr\Testable;
 
-use Mooti\Test\Xizlr\Testable\TestClass;
+use Mooti\Test\Unit\Xizlr\Testable\TestClass;
 
 class TestableTest extends \PHPUnit_Framework_TestCase
 {

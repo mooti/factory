@@ -21,7 +21,7 @@
 
 	<testsuites>
 		<testsuite name="RegularTestSuite">
-			<directory>.</directory>
+			<directory>../tests/unit</directory>
 			<exclude>TestClass.php</exclude>
 		</testsuite>
 	</testsuites>

@@ -11,10 +11,18 @@ A small repo to aid in creating simple clean testable code without the need to u
 
 ### Installation
 
-You can install this through packagist
+You can install this through packagist:
 
 ```
 $ composer require mooti/xizlr-testable
+```
+
+### Run the tests
+
+If you would like to run the tests. Use the following:
+
+```
+$ ./bin/vendor/phpunit -c config/phpunit.xml
 ```
 
 ### Usage

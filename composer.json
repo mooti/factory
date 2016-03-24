@@ -15,7 +15,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Mooti\\Test\\Xizlr\\Testable\\": "test/"
+            "Mooti\\Test\\Unit\\Xizlr\\Testable\\": "tests/unit"
         }
     },
     "config": {

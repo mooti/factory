@@ -1,6 +1,6 @@
 <?php
 
-namespace Mooti\Test\Xizlr\Testable;
+namespace Mooti\Test\Unit\Xizlr\Testable;
 
 class TestClass
 {
