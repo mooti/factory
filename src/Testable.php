@@ -1,6 +1,6 @@
 <?php
 
-namespace Mooti\Xizlr\Testable;
+namespace Mooti\Testable;
 
 trait Testable
 {

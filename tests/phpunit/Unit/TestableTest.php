@@ -1,8 +1,10 @@
 <?php
+namespace Mooti\Test\PHPUnit\Testable\Unit;
 
-namespace Mooti\Test\Unit\Xizlr\Testable;
+require_once(__DIR__.'/../../../vendor/autoload.php');
 
-use Mooti\Test\Unit\Xizlr\Testable\TestClass;
+use Mooti\Test\PHPUnit\Testable\Unit\Fixture\TestClass;
+use Mooti\Testable\Testable;
 
 class TestableTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +13,7 @@ class TestableTest extends \PHPUnit_Framework_TestCase
      */
     public function createNewSucceeds()
     {
-        $testableObject = $this->getMockForTrait('\\Mooti\\Xizlr\\Testable\\Testable');
+        $testableObject = $this->getMockForTrait(Testable::class);
 
         $testObject = $testableObject->createNew(TestClass::class);
 
@@ -24,7 +26,7 @@ class TestableTest extends \PHPUnit_Framework_TestCase
      */
     public function addMockSucceeds()
     {
-        $testableObject = $this->getMockForTrait('\\Mooti\\Xizlr\\Testable\\Testable');
+        $testableObject = $this->getMockForTrait(Testable::class);
 
         $mockObject1 = $this->getMockBuilder(TestClass::class)
             ->disableOriginalConstructor()

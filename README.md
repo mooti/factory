@@ -1,11 +1,11 @@
-# Xizlr Testable
+# Mooti Testable
 
-[![Build Status](https://travis-ci.org/mooti/xizlr-testable.svg?branch=master)](https://travis-ci.org/mooti/xizlr-testable)
-[![Coverage Status](https://coveralls.io/repos/github/mooti/xizlr-testable/badge.svg?branch=master)](https://coveralls.io/github/mooti/xizlr-testable?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/mooti/xizlr-testable/v/stable)](https://packagist.org/packages/mooti/xizlr-testable)
-[![Total Downloads](https://poser.pugx.org/mooti/xizlr-testable/downloads)](https://packagist.org/packages/mooti/xizlr-testable)
-[![Latest Unstable Version](https://poser.pugx.org/mooti/xizlr-testable/v/unstable)](https://packagist.org/packages/mooti/xizlr-testable)
-[![License](https://poser.pugx.org/mooti/xizlr-testable/license)](https://packagist.org/packages/mooti/xizlr-testable)
+[![Build Status](https://travis-ci.org/mooti/testable.svg?branch=master)](https://travis-ci.org/mooti/testable)
+[![Coverage Status](https://coveralls.io/repos/github/mooti/testable/badge.svg?branch=master)](https://coveralls.io/github/mooti/testable?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/mooti/testable/v/stable)](https://packagist.org/packages/mooti/testable)
+[![Total Downloads](https://poser.pugx.org/mooti/testable/downloads)](https://packagist.org/packages/mooti/testable)
+[![Latest Unstable Version](https://poser.pugx.org/mooti/testable/v/unstable)](https://packagist.org/packages/mooti/testable)
+[![License](https://poser.pugx.org/mooti/testable/license)](https://packagist.org/packages/mooti/testable)
 
 A small repo to aid in creating simple clean testable code without the need to use a dependancy injection container. It replaces the ```new``` keyword with a method call enabling you to easily mock objects.
 
@@ -14,7 +14,7 @@ A small repo to aid in creating simple clean testable code without the need to u
 You can install this through packagist:
 
 ```
-$ composer require mooti/xizlr-testable
+$ composer require mooti/testable
 ```
 
 ### Run the tests

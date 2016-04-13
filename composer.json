@@ -1,5 +1,5 @@
 {
-    "name":"mooti/xizlr-testable",
+    "name":"mooti/testable",
     "license": "Apache-2.0",
     "require": {
         "php": ">=5.5.9"
@@ -10,12 +10,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mooti\\Xizlr\\Testable\\": "src/"
+            "Mooti\\Testable\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mooti\\Test\\Unit\\Xizlr\\Testable\\": "tests/unit"
+            "Mooti\\Test\\PHPUnit\\Testable\\": "tests/phpunit/"
         }
     },
     "config": {
