@@ -59,7 +59,7 @@ You will create Bar.php. You can then add the Testable trait and use the ```crea
 
 namespace Your;
 
-use Mooti\Xizlr\Testable\Testable;
+use Mooti\Testable\Testable;
 use My\Foo;
 
 class Bar
