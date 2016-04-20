@@ -1,20 +1,20 @@
-# Mooti Testable
+# Mooti Factory
 
-[![Build Status](https://travis-ci.org/mooti/testable.svg?branch=master)](https://travis-ci.org/mooti/testable)
-[![Coverage Status](https://coveralls.io/repos/github/mooti/testable/badge.svg?branch=master)](https://coveralls.io/github/mooti/testable?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/mooti/testable/v/stable)](https://packagist.org/packages/mooti/testable)
-[![Total Downloads](https://poser.pugx.org/mooti/testable/downloads)](https://packagist.org/packages/mooti/testable)
-[![Latest Unstable Version](https://poser.pugx.org/mooti/testable/v/unstable)](https://packagist.org/packages/mooti/testable)
-[![License](https://poser.pugx.org/mooti/testable/license)](https://packagist.org/packages/mooti/testable)
+[![Build Status](https://travis-ci.org/mooti/factory.svg?branch=master)](https://travis-ci.org/mooti/factory)
+[![Coverage Status](https://coveralls.io/repos/github/mooti/factory/badge.svg?branch=master)](https://coveralls.io/github/mooti/factory?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/mooti/factory/v/stable)](https://packagist.org/packages/mooti/factory)
+[![Total Downloads](https://poser.pugx.org/mooti/factory/downloads)](https://packagist.org/packages/mooti/factory)
+[![Latest Unstable Version](https://poser.pugx.org/mooti/factory/v/unstable)](https://packagist.org/packages/mooti/factory)
+[![License](https://poser.pugx.org/mooti/factory/license)](https://packagist.org/packages/mooti/factory)
 
-A small repo to aid in creating simple clean testable code without the need to use a dependancy injection container. It replaces the ```new``` keyword with a method call enabling you to easily mock objects.
+A small repo to aid in creating simple clean factory code without the need to use a dependancy injection container or create numerous factory classes. It replaces the ```new``` keyword with a method call enabling you to easily mock objects.
 
 ### Installation
 
 You can install this through packagist:
 
 ```
-$ composer require mooti/testable
+$ composer require mooti/factory
 ```
 
 ### Run the tests
@@ -52,19 +52,19 @@ class Foo
 
 ```
 
-You will create Bar.php. You can then add the Testable trait and use the ```createNew``` method to instantiate a new object. The first argument is the name of the class and subsequent arguments are the classes constructor arguments. 
+You will create Bar.php. You can then add the Factory trait and use the ```createNew``` method to instantiate a new object. The first argument is the name of the class and subsequent arguments are the classes constructor arguments. 
 
 ```php
 <?php
 
 namespace Your;
 
-use Mooti\Testable\Testable;
+use Mooti\Factory\Factory;
 use My\Foo;
 
 class Bar
 {
-	use Testable;
+	use Factory;
 
 	public function speak($firstName, $lastName)
 	{

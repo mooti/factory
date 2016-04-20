@@ -1,5 +1,8 @@
 {
-    "name":"mooti/testable",
+    "name":"mooti/factory",
+    "description": "Small library for helping create testable code",
+    "keywords": ["testing", "factory", "testable", "mock"],
+    "type": "library",
     "license": "Apache-2.0",
     "require": {
         "php": ">=5.5.9"
@@ -10,12 +13,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mooti\\Testable\\": "src/"
+            "Mooti\\Factory\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mooti\\Test\\PHPUnit\\Testable\\": "tests/phpunit/"
+            "Mooti\\Test\\PHPUnit\\Factory\\": "tests/phpunit/"
         }
     },
     "config": {

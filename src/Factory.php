@@ -1,24 +1,24 @@
 <?php
 
-namespace Mooti\Testable;
+namespace Mooti\Factory;
 
-trait Testable
+trait Factory
 {
-    private $mocks = [];
+    private $objects = [];
 
     /**
-     * Add a mock object. This will be returned when the user tries to create a new object
+     * Add an instance of a class. This will be returned when the user tries to create a the object
      *
      * @param string $className  The class to create
      * @param string $mockObject The class to create
      *
      */
-    public function addMock($className, $mockObject)
+    public function addInstance($className, $mockObject)
     {
-        if(!isset($this->mocks[$className])) {
-            $this->mocks[$className] = [];
+        if(!isset($this->objects[$className])) {
+            $this->objects[$className] = [];
         }
-        $this->mocks[$className][] = $mockObject;
+        $this->objects[$className][] = $mockObject;
     }
 
     /**
@@ -42,8 +42,8 @@ trait Testable
      */
     protected function _createNew($className)
     {
-        if (!empty($this->mocks[$className])) {
-            return array_shift($this->mocks[$className]);
+        if (!empty($this->objects[$className])) {
+            return array_shift($this->objects[$className]);
         }
 
         $constructArguments = func_get_args();

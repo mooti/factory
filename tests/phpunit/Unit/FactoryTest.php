@@ -1,19 +1,19 @@
 <?php
-namespace Mooti\Test\PHPUnit\Testable\Unit;
+namespace Mooti\Test\PHPUnit\Factory\Unit;
 
 require_once(__DIR__.'/../../../vendor/autoload.php');
 
-use Mooti\Test\PHPUnit\Testable\Unit\Fixture\TestClass;
-use Mooti\Testable\Testable;
+use Mooti\Test\PHPUnit\Factory\Unit\Fixture\TestClass;
+use Mooti\Factory\Factory;
 
-class TestableTest extends \PHPUnit_Framework_TestCase
+class FactoryTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
      */
     public function createNewSucceeds()
     {
-        $testableObject = $this->getMockForTrait(Testable::class);
+        $testableObject = $this->getMockForTrait(Factory::class);
 
         $testObject = $testableObject->createNew(TestClass::class);
 
@@ -24,9 +24,9 @@ class TestableTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function addMockSucceeds()
+    public function addInstanceSucceeds()
     {
-        $testableObject = $this->getMockForTrait(Testable::class);
+        $testableObject = $this->getMockForTrait(Factory::class);
 
         $mockObject1 = $this->getMockBuilder(TestClass::class)
             ->disableOriginalConstructor()
@@ -44,8 +44,8 @@ class TestableTest extends \PHPUnit_Framework_TestCase
             ->method('sayFoo')
             ->will(self::returnValue('foo2'));
 
-        $testableObject->addMock(TestClass::class, $mockObject1);
-        $testableObject->addMock(TestClass::class, $mockObject2);
+        $testableObject->addInstance(TestClass::class, $mockObject1);
+        $testableObject->addInstance(TestClass::class, $mockObject2);
 
         $returnedMockObject1 = $testableObject->createNew(TestClass::class);
         $returnedMockObject2 = $testableObject->createNew(TestClass::class);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mooti\Test\PHPUnit\Testable\Unit\Fixture;
+namespace Mooti\Test\PHPUnit\Factory\Unit\Fixture;
 
 class TestClass
 {
