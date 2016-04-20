@@ -145,7 +145,7 @@ class BarTest extends \PHPUnit_Framework_TestCase
 
 #### Injection
 
-Alternativley we can inject the mock of Foo into Bar using the ```addMock``` method. When you call ```createNew``` it will return the mocked version of the Foo class. We can then set our expectations as normal.
+Alternativley we can inject the mock of Foo into Bar using the ```addInstance``` method. When you call ```createNew``` it will return the mocked version of the Foo class. We can then set our expectations as normal.
 
 ```php
 <?php
@@ -175,7 +175,7 @@ class BarTest extends \PHPUnit_Framework_TestCase
 
         $bar = new Bar;
 
-        $bar->addMock(Foo::class, $foo);
+        $bar->addInstance(Foo::class, $foo);
 
         self::assertSame($greeting, $bar->speak($firstName, $lastName));
     }
