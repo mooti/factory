@@ -30,7 +30,8 @@ trait Factory
      */
     public function createNew($className)
     {
-        return $this->_createNew($className);
+        $constructArguments = func_get_args();
+        return $this->_createNew( ...$constructArguments);
     }
 
     /**
