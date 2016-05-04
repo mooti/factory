@@ -23,6 +23,18 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
+     * @expectedException Mooti\Factory\Exception\ClassNotFoundException
+     * @expectedExceptionMessage The class \NoClassHere cannot be found
+     */
+    public function createNewWithNonExistingClassThrowsClassNotFoundException()
+    {
+        $testableObject = $this->getMockForTrait(Factory::class);
+
+        $testObject = $testableObject->createNew('\\NoClassHere');
+    }
+
+    /**
+     * @test
      */
     public function addInstanceSucceeds()
     {

@@ -2,6 +2,8 @@
 
 namespace Mooti\Factory;
 
+use Mooti\Factory\Exception\ClassNotFoundException;
+
 trait Factory
 {
     private $objects = [];
@@ -45,6 +47,10 @@ trait Factory
     {
         if (!empty($this->objects[$className])) {
             return array_shift($this->objects[$className]);
+        }
+
+        if (class_exists($className) == false) {
+            throw new ClassNotFoundException('The class '.$className.' cannot be found');
         }
 
         $constructArguments = func_get_args();
