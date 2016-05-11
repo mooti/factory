@@ -20,8 +20,5 @@
         "psr-4": {
             "Mooti\\Test\\PHPUnit\\Factory\\": "tests/phpunit/"
         }
-    },
-    "config": {
-        "bin-dir": "bin/vendor/"
     }
 }
