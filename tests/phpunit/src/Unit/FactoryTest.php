@@ -1,8 +1,6 @@
 <?php
 namespace Mooti\Test\PHPUnit\Factory\Unit;
 
-require_once(__DIR__.'/../../../vendor/autoload.php');
-
 use Mooti\Test\PHPUnit\Factory\Unit\Fixture\TestClass;
 use Mooti\Factory\Factory;
 

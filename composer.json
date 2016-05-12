@@ -18,7 +18,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Mooti\\Test\\PHPUnit\\Factory\\": "tests/phpunit/"
+            "Mooti\\Test\\PHPUnit\\Factory\\": "tests/phpunit/src"
         }
     }
 }
